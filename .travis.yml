@@ -8,4 +8,4 @@ script:
      - wget https://digitalocean.cocos2d-x.org/Cocos2D-X/cocos2d-x-3.17.2.zip
      - unzip cocos2d-x-3.17.2.zip
      - cd cocos2d-x-3.17.2
-     - python setup.py
+     - python setup.py -q
