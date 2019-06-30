@@ -9,4 +9,5 @@ script:
      - unzip cocos2d-x-3.17.2.zip
      - cd cocos2d-x-3.17.2
      - python setup.py -q
+     - source /home/travis/.bashrc
      - cocos new -l cpp TestMe
