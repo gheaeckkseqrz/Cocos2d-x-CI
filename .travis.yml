@@ -7,22 +7,23 @@ script:
     ############################################################################
     # Build main and tests
     ############################################################################
-     - if [ "$TRAVIS_OS_NAME" = "osx" ]; then HOMEBREW_NO_AUTO_UPDATE=1 brew cask install fastlane ; fi
-     - sed -i '133,136d' /Users/travis/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.126.0/fastlane_core/lib/fastlane_core/project.rb
-     - cat /Users/travis/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.126.0/fastlane_core/lib/fastlane_core/project.rb
-     - export PATH="$HOME/.fastlane/bin:$PATH"
-     - which fastlane
-     - wget -nv https://digitalocean.cocos2d-x.org/Cocos2D-X/cocos2d-x-3.17.2.zip
-     - unzip cocos2d-x-3.17.2.zip > /dev/null
-     - cd cocos2d-x-3.17.2
-     - python download-deps.py
-     - python setup.py -q
-     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then source /home/travis/.bashrc ; fi
-     - if [ "$TRAVIS_OS_NAME" = "osx" ]; then source /Users/travis/.bash_profile ; fi
-     - cd ..
-     - echo 'Y' | cocos new COCOS -l cpp -p ${BUNDLE_ID}
-     - rm -rf proj.ios_mac/
-     - mv COCOS/* .
-     - git checkout .
-     - cd proj.ios_mac/
-     - /Users/travis/.fastlane/bin/fastlane beta
+     - ll -R /Users/travis/.rvm/gems/ruby-2.4.3/
+     # - if [ "$TRAVIS_OS_NAME" = "osx" ]; then HOMEBREW_NO_AUTO_UPDATE=1 brew cask install fastlane ; fi
+     # - sed -i '133,136d' /Users/travis/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.126.0/fastlane_core/lib/fastlane_core/project.rb
+     # - cat /Users/travis/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.126.0/fastlane_core/lib/fastlane_core/project.rb
+     # - export PATH="$HOME/.fastlane/bin:$PATH"
+     # - which fastlane
+     # - wget -nv https://digitalocean.cocos2d-x.org/Cocos2D-X/cocos2d-x-3.17.2.zip
+     # - unzip cocos2d-x-3.17.2.zip > /dev/null
+     # - cd cocos2d-x-3.17.2
+     # - python download-deps.py
+     # - python setup.py -q
+     # - if [ "$TRAVIS_OS_NAME" = "linux" ]; then source /home/travis/.bashrc ; fi
+     # - if [ "$TRAVIS_OS_NAME" = "osx" ]; then source /Users/travis/.bash_profile ; fi
+     # - cd ..
+     # - echo 'Y' | cocos new COCOS -l cpp -p ${BUNDLE_ID}
+     # - rm -rf proj.ios_mac/
+     # - mv COCOS/* .
+     # - git checkout .
+     # - cd proj.ios_mac/
+     # - /Users/travis/.fastlane/bin/fastlane beta
