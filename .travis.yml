@@ -8,7 +8,7 @@ script:
     # Build main and tests
     ############################################################################
      - sudo gem install fastlane
-     - ls -l /Users/travis/.rvm/gems/ruby-2.4.3//gems/fastlane-2.98.0/fastlane_core/lib/fastlane_core
+     - ls -l /Users/travis/.rvm/gems/ruby-2.4.3//gems/
      - ls -lR /Users/travis/.rvm/gems/ruby-2.4.3/
      - which fastlane
      - sed '133,136d' "/Users/travis/.rvm/gems/ruby-2.4.3/gems/fastlane-2.126.0/fastlane_core/lib/fastlane_core/project.rb" > "/Users/travis/.rvm/gems/ruby-2.4.3/gems/fastlane-2.126.0/fastlane_core/lib/fastlane_core/project.rb"
