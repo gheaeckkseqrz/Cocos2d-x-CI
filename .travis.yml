@@ -11,7 +11,7 @@ script:
     # Build main and tests
     ############################################################################
      - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get install libgtk-3-dev libglew-dev ; fi
-     - if [ "$TRAVIS_OS_NAME" = "osx" ]; then HOMEBREW_NO_AUTO_UPDATE=1 brew cask install fastlane && sudo gem install fastlane; fi
+     - if [ "$TRAVIS_OS_NAME" = "osx" ]; then HOMEBREW_NO_AUTO_UPDATE=1 brew cask install fastlane && brew install tree && sudo gem install fastlane; fi
      - mkdir -p build
      - wget -nv https://digitalocean.cocos2d-x.org/Cocos2D-X/cocos2d-x-3.17.2.zip
      - unzip cocos2d-x-3.17.2.zip > /dev/null
@@ -26,5 +26,8 @@ script:
      - mv COCOS/* .
      - git checkout .
      - cd proj.ios_mac/
-     - sh setup_workspace.sh
+     - tree COCOS.xcodeproj
+     - sudo gem install xcodeproj
+     - ruby setup_workspace.rb
+     - tree COCOS.xcodeproj
      - fastlane beta

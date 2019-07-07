@@ -1,6 +1,6 @@
 #!/bin/bash
 
-/Applications/Xcode.app/Contents/MacOS/Xcode "$COCOS.xcodeproj" & XCODE_PID=$!
+/Applications/Xcode.app/Contents/MacOS/Xcode "COCOS.xcodeproj" & XCODE_PID=$!
 
 # now we wait for xcode to build the workspace:
 WAIT_FOR_XCODE=0
