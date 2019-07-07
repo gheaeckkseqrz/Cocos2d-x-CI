@@ -20,9 +20,5 @@ script:
      - if [ "$TRAVIS_OS_NAME" = "linux" ]; then source /home/travis/.bashrc ; fi
      - if [ "$TRAVIS_OS_NAME" = "osx" ]; then source /Users/travis/.bash_profile ; fi
      - cd ..
-     - echo 'Y' | cocos new -l cpp TestMe
-     - cd TestMe
-     - mkdir build
-     - cd build
-     - cmake ..
-     - make -j4
+     - echo 'Y' | cocos new -l cpp ${BUNDLE_ID} -p ${BUNDLE_ID}
+     - cd ${BUNDLE_ID}
