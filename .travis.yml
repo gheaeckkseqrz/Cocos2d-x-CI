@@ -26,3 +26,4 @@ script:
      - mv COCOS/* .
      - git checkout .
      - ls proj.ios_mac/
+     - fastlane beta
