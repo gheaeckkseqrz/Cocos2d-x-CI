@@ -8,7 +8,7 @@ script:
     # Build main and tests
     ############################################################################
      - if [ "$TRAVIS_OS_NAME" = "osx" ]; then HOMEBREW_NO_AUTO_UPDATE=1 brew cask install fastlane ; fi
-     - sed '133,137d' /Users/travis/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.126.0/fastlane_core/lib/fastlane_core/project.rb
+     - sed '133,136d' /Users/travis/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.126.0/fastlane_core/lib/fastlane_core/project.rb
      - cat /Users/travis/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.126.0/fastlane_core/lib/fastlane_core/project.rb 
      - which fastlane
      - wget -nv https://digitalocean.cocos2d-x.org/Cocos2D-X/cocos2d-x-3.17.2.zip
