@@ -8,6 +8,7 @@ script:
     # Build main and tests
     ############################################################################
      - ls -l -R /Users/travis/.rvm/gems/ruby-2.4.3/
+     - cat -n /Users/travis/.rvm/gems/ruby-2.4.3//gems/fastlane-2.98.0/fastlane_core/lib/fastlane_core/project.rb
      # - if [ "$TRAVIS_OS_NAME" = "osx" ]; then HOMEBREW_NO_AUTO_UPDATE=1 brew cask install fastlane ; fi
      # - sed -i '133,136d' /Users/travis/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.126.0/fastlane_core/lib/fastlane_core/project.rb
      # - cat /Users/travis/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.126.0/fastlane_core/lib/fastlane_core/project.rb
