@@ -22,4 +22,5 @@ script:
      - if [ "$TRAVIS_OS_NAME" = "osx" ]; then source /Users/travis/.bash_profile ; fi
      - cd ..
      - echo 'Y' | cocos new COCOS -l cpp -p ${BUNDLE_ID}
-     - ls
+     - mv COCOS/* .
+     - ls proj.ios_mac/
