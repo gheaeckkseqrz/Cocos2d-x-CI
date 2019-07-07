@@ -9,7 +9,7 @@ script:
     ############################################################################
      - sudo gem install fastlane
      - which fastlane
-     - sed '133,136d' "/Users/travis/.rvm/gems/ruby-2.4.3//gems/fastlane-2.126.0/fastlane_core/lib/fastlane_core/project.rb" > "/Users/travis/.rvm/gems/ruby-2.4.3//gems/fastlane-2.126.0/fastlane_core/lib/fastlane_core/project.rb"
+     - sed '133,136d' "/Users/travis/.rvm/gems/ruby-2.4.3/gems/fastlane-2.126.0/fastlane_core/lib/fastlane_core/project.rb" > "/Users/travis/.rvm/gems/ruby-2.4.3/gems/fastlane-2.126.0/fastlane_core/lib/fastlane_core/project.rb"
      - wget -nv https://digitalocean.cocos2d-x.org/Cocos2D-X/cocos2d-x-3.17.2.zip
      - unzip cocos2d-x-3.17.2.zip > /dev/null
      - cd cocos2d-x-3.17.2
