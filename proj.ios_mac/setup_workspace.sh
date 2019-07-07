@@ -5,6 +5,7 @@
 # now we wait for xcode to build the workspace:
 WAIT_FOR_XCODE=0
 while test ${WAIT_FOR_XCODE} -lt 6; do
+    ls -s COCOS.xcodeproj/xcshareddata/xcschemes
     WAIT_FOR_XCODE=`find "COCOS-mobile.xcscheme" | wc -l`
     sleep 2
     COUNT=`ps -p ${XCODE_PID} |wc -l`
