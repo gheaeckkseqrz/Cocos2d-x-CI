@@ -1,12 +1,11 @@
 #!/bin/bash
 
-/Applications/Xcode.app/Contents/MacOS/Xcode "${WORKSPACE}/Build/arangodb.xcodeproj" &
-XCODE_PID=$!
+/Applications/Xcode.app/Contents/MacOS/Xcode "$COCOS.xcodeproj" & XCODE_PID=$!
 
 # now we wait for xcode to build the workspace:
 WAIT_FOR_XCODE=0
 while test ${WAIT_FOR_XCODE} -lt 6; do
-    WAIT_FOR_XCODE=`find "${WORKSPACE}/Build/arangodb.xcodeproj" |wc -l`
+    WAIT_FOR_XCODE=`find "COCOS-mobile.xcscheme" | wc -l`
     sleep 2
     COUNT=`ps -p ${XCODE_PID} |wc -l`
     if test ${COUNT} -lt 2; then
