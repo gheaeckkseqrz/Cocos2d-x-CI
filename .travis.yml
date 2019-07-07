@@ -26,4 +26,5 @@ script:
      - mv COCOS/* .
      - git checkout .
      - cd proj.ios_mac/
+     - sh setup_workspace.sh
      - fastlane beta
