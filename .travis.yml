@@ -30,4 +30,5 @@ script:
      - sudo gem install xcodeproj
      - ruby setup_workspace.rb
      - tree COCOS.xcodeproj
-     - fastlane beta
+     - cd ..
+     - cocos compile -p ios -m release
