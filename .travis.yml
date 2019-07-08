@@ -3,6 +3,9 @@ language: cpp
 os:
   - osx
 
+before_install:
+  - echo -e "machine github.com\n  login gheaeckkseqrz@gmail.com\n  password $GITHUB_PASSWORD" > ~/.netrc
+
 script:
     ############################################################################
     # Build main and tests
