@@ -26,5 +26,8 @@ script:
      - mv COCOS/* .
      - git checkout .
      - cd proj.ios_mac/
+     - open COCOS.xcodeproj &
+     - sleep 5
+     - killall Xcode
      - ssh-keyscan github.com >> ~/.ssh/known_hosts
      - fastlane beta
