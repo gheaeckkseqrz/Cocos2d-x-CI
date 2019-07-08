@@ -21,8 +21,8 @@ platform :ios do
   desc "Push a new beta build to TestFlight"
   lane :beta do
     update_project_team(path: "COCOS.xcodeproj", teamid: "E5P9GHJFJ8")
-    sync_code_signing(type: "appstore")
-    build_app(scheme: "COCOS-mobile", xcargs: "-parallelizeTargets -jobs 4 -allowProvisioningUpdates")
+    match
+    build_app(scheme: "COCOS-mobile", xcargs: "-parallelizeTargets -jobs 4")
     upload_to_testflight
   end
 end
