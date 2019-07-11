@@ -4,20 +4,20 @@ matrix:
     include:
         - os: osx
           osx_image: xcode11
-        - os: osx
-          osx_image: xcode10.2
-        - os: osx
-          osx_image: xcode10.1
-        - os: osx
-          osx_image: xcode10
-        - os: osx
-          osx_image: xcode9.4
-        - os: osx
-          osx_image: xcode9.3
-        - os: osx
-          osx_image: xcode9.2
-        - os: osx
-          osx_image: xcode9.1
+        # - os: osx
+        #   osx_image: xcode10.2
+        # - os: osx
+        #   osx_image: xcode10.1
+        # - os: osx
+        #   osx_image: xcode10
+        # - os: osx
+        #   osx_image: xcode9.4
+        # - os: osx
+        #   osx_image: xcode9.3
+        # - os: osx
+        #   osx_image: xcode9.2
+        # - os: osx
+        #   osx_image: xcode9.1
 
 
 
@@ -29,6 +29,7 @@ script:
     # Build main and tests
     ############################################################################
      - sudo gem install fastlane
+     - cat -n /Users/travis/.rvm/gems/ruby-2.4.5/gems/fastlane-2.126.0/fastlane_core/lib/fastlane_core/project.rb
      - sudo sed -i "backup" '133,136d' "/Users/travis/.rvm/gems/ruby-2.4.5/gems/fastlane-2.126.0/fastlane_core/lib/fastlane_core/project.rb"
      - wget -nv https://digitalocean.cocos2d-x.org/Cocos2D-X/cocos2d-x-3.17.2.zip
      - unzip cocos2d-x-3.17.2.zip > /dev/null
