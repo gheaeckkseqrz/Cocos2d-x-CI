@@ -25,6 +25,7 @@ platform :ios do
     gym(
       scheme: "COCOS-mobile",
       skip_profile_detection: true,
+              xcargs: "allowProvisioningUpdates",
       export_options: {
         method: "app-store",
         provisioningProfiles: {
