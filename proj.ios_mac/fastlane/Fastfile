@@ -23,7 +23,7 @@ platform :ios do
     update_project_team(path: "COCOS.xcodeproj", teamid: "E5P9GHJFJ8")
     match(type: "appstore")
     build_ios_app(
-      scheme: "Release",
+      scheme: "COCOS-mobile",
       export_options: {
         method: "app-store",
         provisioningProfiles: {
