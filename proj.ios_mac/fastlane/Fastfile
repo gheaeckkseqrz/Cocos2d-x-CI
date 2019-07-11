@@ -22,12 +22,12 @@ platform :ios do
   lane :beta do
     update_project_team(path: "COCOS.xcodeproj", teamid: "E5P9GHJFJ8")
     match(type: "appstore")
-    build_ios_app(
+    gym(
       scheme: "COCOS-mobile",
       export_options: {
         method: "app-store",
         provisioningProfiles: {
-          "fr.OwlGames.CI" => "AppStore_fr.OwlGames.CI.mobileprovision"
+          "fr.OwlGames.CI" => "match AppStore fr.OwlGames.CI"
         }
   }
 )
