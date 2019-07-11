@@ -23,7 +23,7 @@ platform :ios do
     update_project_team(path: "COCOS.xcodeproj", teamid: "E5P9GHJFJ8")
     match(type: "appstore")
     gym(
-      scheme: "COCOS-mobile",
+      scheme: "COCOS",
       skip_profile_detection: true,
               xcargs: "-allowProvisioningUpdates",
       export_options: {
