@@ -24,7 +24,7 @@ platform :ios do
     match(type: "appstore")
     gym(
       scheme: "COCOS-mobile",
-      skip_profile_detection: True,
+      skip_profile_detection: true,
       export_options: {
         method: "app-store",
         provisioningProfiles: {
