@@ -38,14 +38,9 @@ script:
      - echo 'Y' | cocos new COCOS -l cpp -p ${BUNDLE_ID}
      - rm -rf proj.ios_mac/
      - mv COCOS/* .
+     - git checkout .
      - mkdir build && cd build
      - cmake .. -DCMAKE_TOOLCHAIN_FILE=../cocos2d/cmake/ios.toolchain.cmake -GXcode
-     - ls -lR
-
-     # - git checkout .
-     # - cd proj.ios_mac/
-     # - open COCOS.xcodeproj &
-     # - sleep 5
-     # - killall Xcode
-     # - ssh-keyscan github.com >> ~/.ssh/known_hosts
-     # - fastlane beta
+     - cp ../proj.ios_mac/fastlane .
+     - ssh-keyscan github.com >> ~/.ssh/known_hosts
+     - fastlane beta
