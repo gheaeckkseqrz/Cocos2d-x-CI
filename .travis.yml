@@ -29,9 +29,7 @@ script:
     # Build main and tests
     ############################################################################
      - sudo gem install fastlane
-     - ls -lR /Users/travis/.rvm/rubies/ruby-2.4.5/lib/ruby/gems/2.4.0/gems/fastlane-2.127.1/
      - sudo sed -i "backup" '133,136d' "/Users/travis/.rvm/rubies/ruby-2.4.5/lib/ruby/gems/2.4.0/gems/fastlane-2.127.1/fastlane_core/lib/fastlane_core/project.rb"
-     - cat -n "/Users/travis/.rvm/rubies/ruby-2.4.5/lib/ruby/gems/2.4.0/gems/fastlane-2.127.1/fastlane_core/lib/fastlane_core/project.rb"
      - wget -nv https://digitalocean.cocos2d-x.org/Cocos2D-X/cocos2d-x-3.17.2.zip
      - unzip cocos2d-x-3.17.2.zip > /dev/null
      - cd cocos2d-x-3.17.2
