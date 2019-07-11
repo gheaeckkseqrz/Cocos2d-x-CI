@@ -22,8 +22,7 @@ platform :ios do
   lane :beta do
     update_project_team(path: "COCOS.xcodeproj", teamid: "E5P9GHJFJ8")
     match(type: "appstore")
-    match(type: "development")
-    build_app(scheme: "COCOS-mobile", xcargs: "-parallelizeTargets -jobs 4")
+    build_app(scheme: "COCOS-mobile", xcargs: "-parallelizeTargets -jobs 4", export_method="appstore")
     #    upload_to_testflight
   end
 end
