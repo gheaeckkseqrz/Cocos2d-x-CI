@@ -40,7 +40,7 @@ script:
      - mv COCOS/* .
      - git checkout .
      - mkdir build && cd build
-     - cmake .. -DCMAKE_TOOLCHAIN_FILE=../cocos2d/cmake/ios.toolchain.cmake -GXcode
+     - cmake .. -DCMAKE_TOOLCHAIN_FILE=../cocos2d/cmake/ios.toolchain.cmake -GXcode -Wno-dev
      - cmake --build .
      # - xcodebuild -list
      # - cp -r ../proj.ios_mac/fastlane .
