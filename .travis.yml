@@ -42,9 +42,6 @@ script:
      - mkdir build && cd build
      - cmake .. -DCMAKE_TOOLCHAIN_FILE=../cocos2d/cmake/ios.toolchain.cmake -GXcode -Wno-dev
      - echo "set_xcode_property(\${APP_NAME} DEVELOPMENT_TEAM \"E5P9GHJFJ8\")" >> ../CMakeLists.txt
-     - cat ../CMakeLists.txt
-     - cmake --build .
-     # - xcodebuild -list
-     # - cp -r ../proj.ios_mac/fastlane .
-     # - ssh-keyscan github.com >> ~/.ssh/known_hosts
-     # - fastlane beta
+     - cp -r ../proj.ios_mac/fastlane .
+     - ssh-keyscan github.com >> ~/.ssh/known_hosts
+     - fastlane beta
