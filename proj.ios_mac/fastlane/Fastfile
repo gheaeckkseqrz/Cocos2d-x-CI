@@ -22,7 +22,6 @@ platform :ios do
   lane :beta do
     update_project_team(path: "COCOS.xcodeproj", teamid: "E5P9GHJFJ8")
     match(type: "appstore")
-    cert
     sigh(force: true)
     gym(
       scheme: "COCOS",
