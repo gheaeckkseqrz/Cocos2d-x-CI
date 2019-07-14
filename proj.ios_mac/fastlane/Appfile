@@ -1,8 +1,0 @@
-app_identifier("fr.OwlGames.CI") # The bundle identifier of your app
-apple_id("pw1991@orange.fr") # Your Apple email address
-
-itc_team_id("117768810") # App Store Connect Team ID
-team_id("E5P9GHJFJ8") # Developer Portal Team ID
-
-# For more information about the Appfile, see:
-#     https://docs.fastlane.tools/advanced/#appfile
