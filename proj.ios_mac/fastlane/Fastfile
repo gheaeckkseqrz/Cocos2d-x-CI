@@ -30,6 +30,7 @@ platform :ios do
           provisioningProfiles: {
             "fr.OwlGames.CI" => "c4662c23-c54c-4da8-b672-52ce1d17631b"
           }
+        }
       }
     )
     #    upload_to_testflight
