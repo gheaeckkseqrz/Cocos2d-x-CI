@@ -39,12 +39,10 @@ script:
      - rm -rf proj.ios_mac/
      - mv COCOS/* .
      - git checkout .
+     - sh ./signCmakeList.sh
+     - cat ./CMakeLists.txt
      - mkdir build && cd build
      - cmake .. -DCMAKE_TOOLCHAIN_FILE=../cocos2d/cmake/ios.toolchain.cmake -GXcode -Wno-dev
-     - echo "set_xcode_property(\${APP_NAME} DEVELOPMENT_TEAM \"E5P9GHJFJ8\")" >> ../CMakeLists.txt
-     - echo
-       'set_target_properties(${APP_NAME} PROPERTIES XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY "iPhone Developer: Pierre WILMOT")' >> ../CMakeLists.txt
-     - cat ../CMakeLists.txt
      - cp -r ../proj.ios_mac/fastlane .
      - ssh-keyscan github.com >> ~/.ssh/known_hosts
      - fastlane beta
