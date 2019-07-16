@@ -28,6 +28,7 @@ platform :ios do
       scheme: "COCOS",
       export_options: {
         method: "development",
+        export_method: "development",
         export_options: {
           provisioningProfiles: {
             "fr.OwlGames.CI" => "297fabde-362a-42ad-9ed6-163eb55f3e7e"
