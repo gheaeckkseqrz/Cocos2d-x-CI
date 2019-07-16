@@ -23,7 +23,7 @@ platform :ios do
     update_project_team(path: "COCOS.xcodeproj", teamid: "E5P9GHJFJ8")
     update_app_identifier(app_identifier: "fr.OwlGames.CI", plist_path: "CMakeFiles/COCOS.dir/Info.plist")
     match(type: "appstore")
-    gym(scheme: "COCOS")
+    #    gym(scheme: "COCOS")
     #    upload_to_testflight
   end
 end
