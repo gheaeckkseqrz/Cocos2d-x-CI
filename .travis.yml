@@ -46,6 +46,5 @@ script:
      - cp -r ../proj.ios_mac/fastlane .
      - ssh-keyscan github.com >> ~/.ssh/known_hosts
      - fastlane beta
-
-#     - xcodebuild -project COCOS.xcodeproj/
+     - xcodebuild -project COCOS.xcodeproj/
 
