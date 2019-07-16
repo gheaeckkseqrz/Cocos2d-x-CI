@@ -27,7 +27,7 @@ platform :ios do
     gym(
       scheme: "COCOS",
       export_options: {
-        export_method: "development",
+        method: "development",
         export_options: {
           provisioningProfiles: {
             "fr.OwlGames.CI" => "c4662c23-c54c-4da8-b672-52ce1d17631b"
