@@ -45,5 +45,7 @@ script:
      - cmake .. -DCMAKE_TOOLCHAIN_FILE=../cocos2d/cmake/ios.toolchain.cmake -GXcode -Wno-dev
      - cp -r ../proj.ios_mac/fastlane .
      - ssh-keyscan github.com >> ~/.ssh/known_hosts
-     - xcodebuild -project COCOS.xcodeproj/
      - fastlane beta
+
+#     - xcodebuild -project COCOS.xcodeproj/
+
