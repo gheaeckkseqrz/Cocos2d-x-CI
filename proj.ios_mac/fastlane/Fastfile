@@ -23,7 +23,17 @@ platform :ios do
     update_project_team(path: "COCOS.xcodeproj", teamid: "E5P9GHJFJ8")
     update_app_identifier(app_identifier: "fr.OwlGames.CI", plist_path: "CMakeFiles/COCOS.dir/Info.plist")
     match(type: "appstore")
-    #    gym(scheme: "COCOS")
+    gym(
+      scheme: "COCOS",
+      export_options: {
+        export_method: "app-store",
+        export_options: {
+          provisioningProfiles: {
+            "fr.OwlGames.CI" => "c4662c23-c54c-4da8-b672-52ce1d17631b"
+          }
+        }
+      }
+    )
     #    upload_to_testflight
   end
 end
