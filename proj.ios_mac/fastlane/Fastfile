@@ -30,7 +30,7 @@ platform :ios do
         method: "development",
         export_options: {
           provisioningProfiles: {
-            "fr.OwlGames.CI" => "c4662c23-c54c-4da8-b672-52ce1d17631b"
+            "fr.OwlGames.CI" => "297fabde-362a-42ad-9ed6-163eb55f3e7e"
           }
         }
       }
