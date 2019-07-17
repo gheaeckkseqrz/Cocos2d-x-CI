@@ -26,6 +26,7 @@ platform :ios do
     match(type: "development")
     gym(
       scheme: "COCOS",
+      export_method: "development",
       export_options: {
         method: "development",
         export_method: "development",
