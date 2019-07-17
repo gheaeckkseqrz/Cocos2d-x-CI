@@ -26,10 +26,10 @@ platform :ios do
     match(type: "appstore")
     gym(
       scheme: "COCOS",
-      export_method: "appstore",
+      export_method: "app-store",
       export_options: {
-        method: "appstore",
-        export_method: "appstore",
+        method: "app-store",
+        export_method: "app-store",
         export_options: {
           provisioningProfiles: {
             "fr.OwlGames.CI" => "c4662c23-c54c-4da8-b672-52ce1d17631b"
