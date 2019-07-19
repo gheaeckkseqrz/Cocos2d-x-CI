@@ -26,7 +26,7 @@ platform :ios do
 
     update_project_provisioning(
       xcodeproj: "COCOS.xcodeproj",
-      target_filter: "COCOS",
+      target_filter: ".*",
       profile:ENV["sigh_fr.OwlGames.CI_appstore_profile-path"],
       build_configuration: "Release"
     )
