@@ -36,7 +36,7 @@ script:
      - if [ "$TRAVIS_OS_NAME" = "osx" ]; then source /Users/travis/.bash_profile ; fi
      - cd ..
      - echo 'Y' | cocos new COCOS -l cpp -p ${BUNDLE_ID}
-     - rm -rf proj.ios_mac/
+     - rm -rf *
      - mv COCOS/* .
      - git checkout .
      - sh ./signCmakeList.sh
