@@ -24,12 +24,12 @@ platform :ios do
     update_app_identifier(app_identifier: "fr.OwlGames.CI", plist_path: "CMakeFiles/COCOS.dir/Info.plist")
     match(type: "appstore")
 
-    # update_project_provisioning(
-    #   xcodeproj: "COCOS.xcodeproj",
-    #   target_filter: "COCOS",
-    #   profile:ENV["sigh_fr.OwlGames.CI_appstore_profile-path"],
-    #   build_configuration: "Release"
-    # )
+    update_project_provisioning(
+      xcodeproj: "COCOS.xcodeproj",
+      target_filter: "COCOS",
+      profile:ENV["sigh_fr.OwlGames.CI_appstore_profile-path"],
+      build_configuration: "Release"
+    )
 
     gym(
       scheme: "COCOS",
