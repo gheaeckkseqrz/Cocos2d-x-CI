@@ -31,6 +31,10 @@ platform :ios do
       build_configuration: "Release"
     )
 
+    enable_automatic_code_signing(
+      path: "COCOS.xcodeproj"
+    )
+
     gym(
       scheme: "COCOS",
       export_method: "app-store"
