@@ -2,22 +2,22 @@ language: objective-c
 
 matrix:
     include:
-        - os: osx
-          osx_image: xcode11
-        - os: osx
-          osx_image: xcode10.2
-        - os: osx
-          osx_image: xcode10.1
-        - os: osx
-          osx_image: xcode10
+        # - os: osx
+        #   osx_image: xcode11
+        # - os: osx
+        #   osx_image: xcode10.2
+        # - os: osx
+        #   osx_image: xcode10.1
+        # - os: osx
+        #   osx_image: xcode10
         - os: osx
           osx_image: xcode9.4
-        - os: osx
-          osx_image: xcode9.3
-        - os: osx
-          osx_image: xcode9.2
-        - os: osx
-          osx_image: xcode9.1
+        # - os: osx
+        #   osx_image: xcode9.3
+        # - os: osx
+        #   osx_image: xcode9.2
+        # - os: osx
+        #   osx_image: xcode9.1
 
 before_install:
      - echo -e "machine github.com\n  login gheaeckkseqrz@gmail.com\n  password $GITHUB_PASSWORD" > ~/.netrc
@@ -46,5 +46,5 @@ script:
      - cp -r ../proj.ios_mac/fastlane .
      - ssh-keyscan github.com >> ~/.ssh/known_hosts
      - fastlane beta
-     - xcodebuild -project COCOS.xcodeproj/
+     # - xcodebuild -project COCOS.xcodeproj/
 
