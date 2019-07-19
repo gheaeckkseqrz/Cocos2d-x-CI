@@ -47,4 +47,4 @@ script:
      - ssh-keyscan github.com >> ~/.ssh/known_hosts
      - fastlane beta
      # - xcodebuild -project COCOS.xcodeproj/
-
+     - echo "All Done"
