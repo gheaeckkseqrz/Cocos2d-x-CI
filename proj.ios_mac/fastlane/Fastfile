@@ -22,19 +22,9 @@ platform :ios do
   lane :beta do
     update_project_team(path: "COCOS.xcodeproj", teamid: "E5P9GHJFJ8")
     update_app_identifier(app_identifier: "fr.OwlGames.CI", plist_path: "CMakeFiles/COCOS.dir/Info.plist")
+    match(type: "development")
     match(type: "appstore")
-
-    update_project_provisioning(
-      xcodeproj: "COCOS.xcodeproj",
-      target_filter: ".*",
-      profile:ENV["sigh_fr.OwlGames.CI_appstore_profile-path"],
-      build_configuration: "Release"
-    )
-
-    enable_automatic_code_signing(
-      path: "COCOS.xcodeproj"
-    )
-
+    cert
     gym(
       scheme: "COCOS",
       export_method: "app-store"
