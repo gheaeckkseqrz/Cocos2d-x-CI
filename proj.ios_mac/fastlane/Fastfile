@@ -21,10 +21,10 @@ platform :ios do
   desc "Push a new beta build to TestFlight"
   lane :beta do
 
-    update_project_team(path: "CI.xcodeproj", teamid: "E5P9GHJFJ8")
+    update_project_team(path: "COCOS.xcodeproj", teamid: "E5P9GHJFJ8")
     match
     gym(
-      scheme: "CI",
+      scheme: "COCOS",
       export_method: "app-store",
       export_options: {
         provisioningProfiles: {
