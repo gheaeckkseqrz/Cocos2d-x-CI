@@ -21,6 +21,7 @@ platform :ios do
   desc "Push a new beta build to TestFlight"
   lane :beta do
 
+    update_app_identifier(app_identifier: "fr.OwlGames.CI", plist_path: "CMakeFiles/COCOS.dir/Info.plist")
     update_project_team(path: "COCOS.xcodeproj", teamid: "E5P9GHJFJ8")
     match
     gym(
