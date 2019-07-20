@@ -20,13 +20,17 @@ default_platform(:ios)
 platform :ios do
   desc "Push a new beta build to TestFlight"
   lane :beta do
-    update_project_team(path: "COCOS.xcodeproj", teamid: "E5P9GHJFJ8")
-    update_app_identifier(app_identifier: "fr.OwlGames.CI", plist_path: "CMakeFiles/COCOS.dir/Info.plist")
-    match(type: "development")
-    match(type: "appstore")
+
+    update_project_team(path: "CI.xcodeproj", teamid: "E5P9GHJFJ8")
+    match
     gym(
-      scheme: "COCOS",
-      export_method: "app-store"
+      scheme: "CI",
+      export_method: "app-store",
+      export_options: {
+        provisioningProfiles: {
+          "fr.OwlGames.CI" => "54bc1074-aece-4408-b9fb-cf51109207bf"
+        }
+      }
     )
     #    upload_to_testflight
   end
