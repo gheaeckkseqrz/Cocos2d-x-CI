@@ -39,13 +39,10 @@ script:
      - echo 'Y' | cocos new COCOS -l cpp -p ${BUNDLE_ID}
      - mv COCOS/* .
      - git checkout .
-     - sh ./signCmakeList.sh
-     - cat ./CMakeLists.txt
      - mkdir build && cd build
      - cmake .. -DCMAKE_TOOLCHAIN_FILE=../cocos2d/cmake/ios.toolchain.cmake -GXcode -Wno-dev
      - cp -r ../proj.ios_mac/fastlane .
      - ssh-keyscan github.com >> ~/.ssh/known_hosts
      - fastlane beta
-     - xcodebuild -project COCOS.xcodeproj/
-     - cat CMakeLists.txt
+     - xcodebuild
      - echo "All Done"
