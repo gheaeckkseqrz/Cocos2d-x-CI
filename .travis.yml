@@ -28,7 +28,6 @@ script:
     ############################################################################
      - rm -rf *
      - sudo gem install fastlane
-     - fastlane add_plugin appicon
      - sudo sed -i "backup" '133,136d' "/Users/travis/.rvm/rubies/ruby-2.4.5/lib/ruby/gems/2.4.0/gems/fastlane-2.127.1/fastlane_core/lib/fastlane_core/project.rb" || true
      - wget -nv https://digitalocean.cocos2d-x.org/Cocos2D-X/cocos2d-x-3.17.2.zip
      - unzip cocos2d-x-3.17.2.zip > /dev/null
@@ -43,5 +42,6 @@ script:
      - mkdir build && cd build
      - cmake .. -DCMAKE_TOOLCHAIN_FILE=../cocos2d/cmake/ios.toolchain.cmake -GXcode -Wno-dev
      - cp -r ../proj.ios_mac/fastlane .
+     - fastlane add_plugin appicon
      - ssh-keyscan github.com >> ~/.ssh/known_hosts
      - fastlane beta
