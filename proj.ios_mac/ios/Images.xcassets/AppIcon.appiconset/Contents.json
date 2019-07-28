@@ -302,14 +302,6 @@
       "idiom" : "mac",
       "filename" : "Icon1024.png",
       "scale" : "2x"
-    },
-    {
-      "size" : "44x44",
-      "idiom" : "watch",
-      "filename" : "Icon88.png",
-      "scale" : "2x",
-      "role" : "longLook",
-      "subtype" : "42mm"
     }
   ],
   "info" : {
