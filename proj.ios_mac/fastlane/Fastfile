@@ -23,6 +23,7 @@ platform :ios do
     increment_build_number({build_number: latest_testflight_build_number + 1})
     update_app_identifier(app_identifier: "fr.OwlGames.CI", plist_path: "CMakeFiles/COCOS.dir/Info.plist")
     update_project_team(path: "COCOS.xcodeproj", teamid: "E5P9GHJFJ8")
+    appicon(appicon_image_file: 'fastlane/icon.png') 
     match
     gym(
       scheme: "COCOS",
