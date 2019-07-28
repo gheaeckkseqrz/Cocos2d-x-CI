@@ -43,5 +43,6 @@ script:
      - cmake .. -DCMAKE_TOOLCHAIN_FILE=../cocos2d/cmake/ios.toolchain.cmake -GXcode -Wno-dev
      - cp -r ../proj.ios_mac/fastlane .
      - cp fastlane/Gemfile .
+     - bundle install
      - ssh-keyscan github.com >> ~/.ssh/known_hosts
      - bundle exec fastlane beta
