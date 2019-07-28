@@ -29,6 +29,7 @@ platform :ios do
       scheme: "COCOS",
       export_method: "app-store",
       xcargs: {
+        :ASSETCATALOG_COMPILER_APPICON_NAME => "./Assets.xcassets",
         :PROVISIONING_PROFILE_SPECIFIER => "match AppStore fr.OwlGames.CI",
         :CODE_SIGN_IDENTITY => "iPhone Distribution",
         :CODE_SIGN_STYLE => "Manual"
