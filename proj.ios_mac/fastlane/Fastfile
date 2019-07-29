@@ -27,7 +27,7 @@ platform :ios do
     gym(
       scheme: "COCOS",
       export_method: "app-store",
-      sdk: "iOS 11.0",
+      sdk: "iOS 11.4",
       xcargs: {
         :PROVISIONING_PROFILE_SPECIFIER => "match AppStore fr.OwlGames.CI",
         :CODE_SIGN_IDENTITY => "iPhone Distribution",
