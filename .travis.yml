@@ -4,6 +4,7 @@ matrix:
   include:
     - os: osx
       osx_image: xcode10.1
+    - os: linux
 
 before_install:
   - echo -e "machine github.com\n  login gheaeckkseqrz@gmail.com\n  password $GITHUB_PASSWORD" > ~/.netrc
@@ -12,23 +13,33 @@ script:
     ############################################################################
     # Build main and tests
     ############################################################################
-     - HOMEBREW_NO_AUTO_UPDATE=1 brew install graphicsmagick
-     - rm -rf *
-     - sudo sed -i "backup" '133,136d' "/Users/travis/.rvm/rubies/ruby-2.4.5/lib/ruby/gems/2.4.0/gems/fastlane-2.127.1/fastlane_core/lib/fastlane_core/project.rb" || true
-     - wget -nv https://digitalocean.cocos2d-x.org/Cocos2D-X/cocos2d-x-3.17.2.zip
-     - unzip cocos2d-x-3.17.2.zip > /dev/null
-     - cd cocos2d-x-3.17.2
-     - python download-deps.py
-     - python setup.py -q
-     - if [ "$TRAVIS_OS_NAME" = "osx" ]; then source /Users/travis/.bash_profile ; fi
-     - cd ..
-     - echo 'Y' | cocos new COCOS -l cpp -p ${BUNDLE_ID}
-     - mv COCOS/* .
-     - git checkout .
-     - mkdir build && cd build
-     - cmake .. -DCMAKE_TOOLCHAIN_FILE=../cocos2d/cmake/ios.toolchain.cmake -GXcode -Wno-dev
-     - cp -r ../proj.ios_mac/fastlane .
-     - cp fastlane/Gemfile .
-     - bundle install
-     - ssh-keyscan github.com >> ~/.ssh/known_hosts
-     - bundle exec fastlane beta
+
+    # MAC Dependancies
+    - if [ "$TRAVIS_OS_NAME" = "osx" ]; HOMEBREW_NO_AUTO_UPDATE=1 brew install graphicsmagick ; fi
+
+    # COCOS SETUP
+    - rm -rf *
+    - sudo sed -i "backup" '133,136d' "/Users/travis/.rvm/rubies/ruby-2.4.5/lib/ruby/gems/2.4.0/gems/fastlane-2.127.1/fastlane_core/lib/fastlane_core/project.rb" || true
+    - wget -nv https://digitalocean.cocos2d-x.org/Cocos2D-X/cocos2d-x-3.17.2.zip
+    - unzip cocos2d-x-3.17.2.zip > /dev/null
+    - cd cocos2d-x-3.17.2
+    - python download-deps.py
+    - python setup.py -q
+    - source ~/.bash_profile
+    - cd ..
+    - echo 'Y' | cocos new COCOS -l cpp -p ${BUNDLE_ID}
+    - mv COCOS/* .
+    - git checkout .
+    - mkdir build && cd build
+
+    # Build IOS
+    - if [ "$TRAVIS_OS_NAME" = "osx" ]; then cmake .. -DCMAKE_TOOLCHAIN_FILE=../cocos2d/cmake/ios.toolchain.cmake -GXcode -Wno-dev ; fi
+    - if [ "$TRAVIS_OS_NAME" = "osx" ]; then cp -r ../proj.ios_mac/fastlane . ; fi
+    - if [ "$TRAVIS_OS_NAME" = "osx" ]; then cp fastlane/Gemfile . ; fi
+    - if [ "$TRAVIS_OS_NAME" = "osx" ]; then bundle install ; fi
+    - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ssh-keyscan github.com >> ~/.ssh/known_hosts ; fi
+    - if [ "$TRAVIS_OS_NAME" = "osx" ]; then bundle exec fastlane beta ; fi
+
+    # Build Linux
+    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then cmake .. ; fi
+    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then make ; fi
