@@ -44,4 +44,4 @@ script:
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j 3 ; fi
     # Build Android
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then cd ../proj.android ; fi
-    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then fastlane android test ; fi
+    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then bundle exec fastlane android test ; fi
