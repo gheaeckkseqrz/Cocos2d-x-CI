@@ -49,9 +49,9 @@ script:
     - env
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then wget -nv https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip ; fi
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then unzip sdk-tools-linux-4333796.zip > /dev/null ; fi
-    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then yes | ./tools/bin/sdkmanager --licenses ; fi
+    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then yes | JAVA_HOME="" ./tools/bin/sdkmanager --licenses ; fi
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then export ANDROID_SDK_ROOT=`pwd` ; fi
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then cd ../proj.android ; fi
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then gem install bundler ; fi
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then bundle install ; fi
-    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then bundle exec fastlane android test ; fi
+    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then JAVA_HOME="" bundle exec fastlane android test ; fi
