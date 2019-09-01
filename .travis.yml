@@ -2,8 +2,8 @@ language: cpp
 
 matrix:
   include:
-    # - os: osx
-    #   osx_image: xcode10.1
+    - os: osx
+      osx_image: xcode10.1
     - os: linux
 
 before_install:
@@ -42,8 +42,8 @@ script:
     - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ssh-keyscan github.com >> ~/.ssh/known_hosts ; fi
     - if [ "$TRAVIS_OS_NAME" = "osx" ]; then bundle exec fastlane beta ; fi
     # Build Linux
-    # - if [ "$TRAVIS_OS_NAME" = "linux" ]; then cmake .. ; fi
-    # - if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j 3 ; fi
+    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then cmake .. ; fi
+    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j 3 ; fi
     # Build Android
     - java -version
     - env
