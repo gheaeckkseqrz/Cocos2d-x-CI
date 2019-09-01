@@ -43,6 +43,7 @@ script:
     # - if [ "$TRAVIS_OS_NAME" = "linux" ]; then cmake .. ; fi
     # - if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j 3 ; fi
     # Build Android
+    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then wget https://dl.google.com/dl/android/studio/ide-zips/3.5.0.21/android-studio-ide-191.5791312-linux.tar.gz && tar xf android-studio-ide-191.5791312-linux.tar.gz && ll -R; fi
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then cd ../proj.android ; fi
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then gem install bundler ; fi
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then bundle install ; fi
