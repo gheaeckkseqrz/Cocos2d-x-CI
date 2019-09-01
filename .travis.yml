@@ -45,6 +45,7 @@ script:
     # Build Android
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo update-java-alternatives --set java-1.8.0-openjdk-amd64 ; fi
     - java -version
+    - env
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then wget -nv https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip ; fi
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then unzip sdk-tools-linux-4333796.zip ; fi
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then yes | ./tools/bin/sdkmanager --licenses ; fi
