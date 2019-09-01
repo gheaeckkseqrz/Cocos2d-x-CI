@@ -43,5 +43,5 @@ script:
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then cmake .. ; fi
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then make ; fi
     # Build Android
-    - if [ "$TRAVIS_OS_NAME" = "linux" ]; cd ../proj.android ; fi
-    - if [ "$TRAVIS_OS_NAME" = "linux" ]; fastlane android test ; fi
+    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then cd ../proj.android ; fi
+    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then fastlane android test ; fi
