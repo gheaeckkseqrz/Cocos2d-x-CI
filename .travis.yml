@@ -17,7 +17,7 @@ script:
     # MAC Dependancies
     - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install graphicsmagick ; fi
     # Linux Dependancies
-    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo rm -r /usr/lib/jvm/java-11-oracle ; fi
+    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo rm `which java` ; fi
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get install libgtk-3-dev libglew-dev openjdk-8-jre icedtea-8-plugin ; fi
     # COCOS SETUP
     - rm -rf *
