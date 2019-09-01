@@ -18,7 +18,8 @@ script:
     - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install graphicsmagick ; fi
     # Linux Dependancies
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo rm `which java` ; fi
-    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get install libgtk-3-dev libglew-dev openjdk-8-jre icedtea-8-plugin ; fi
+    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get install libgtk-3-dev libglew-dev openjdk-8-jre icedtea-8-plugin > /dev/null ; fi
+    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then unset JAVA_HOME ; fi
     # COCOS SETUP
     - rm -rf *
     - sudo sed -i "backup" '133,136d' "/Users/travis/.rvm/rubies/ruby-2.4.5/lib/ruby/gems/2.4.0/gems/fastlane-2.127.1/fastlane_core/lib/fastlane_core/project.rb" || true
