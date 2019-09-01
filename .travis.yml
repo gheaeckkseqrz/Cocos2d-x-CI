@@ -44,7 +44,6 @@ script:
     # - if [ "$TRAVIS_OS_NAME" = "linux" ]; then cmake .. ; fi
     # - if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j 3 ; fi
     # Build Android
-    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then export JAVA_HOME=/usr/local/lib/jvm/openjdk8 ; fi
     - java -version
     - env
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then wget -nv https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip ; fi
