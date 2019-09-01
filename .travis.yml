@@ -43,7 +43,9 @@ script:
     # - if [ "$TRAVIS_OS_NAME" = "linux" ]; then cmake .. ; fi
     # - if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j 3 ; fi
     # Build Android
-    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then wget https://dl.google.com/dl/android/studio/ide-zips/3.5.0.21/android-studio-ide-191.5791312-linux.tar.gz && tar xf android-studio-ide-191.5791312-linux.tar.gz && ls -lR; fi
+    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip ; fi
+    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then unzip sdk-tools-linux-4333796.zip ; fi
+    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then export ANDROID_SDK_ROOT=`pwd` ; fi
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then cd ../proj.android ; fi
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then gem install bundler ; fi
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then bundle install ; fi
