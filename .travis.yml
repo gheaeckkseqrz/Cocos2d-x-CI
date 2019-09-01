@@ -40,8 +40,11 @@ script:
     - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ssh-keyscan github.com >> ~/.ssh/known_hosts ; fi
     - if [ "$TRAVIS_OS_NAME" = "osx" ]; then bundle exec fastlane beta ; fi
     # Build Linux
-    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then cmake .. ; fi
-    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j 3 ; fi
+    # - if [ "$TRAVIS_OS_NAME" = "linux" ]; then cmake .. ; fi
+    # - if [ "$TRAVIS_OS_NAME" = "linux" ]; then make -j 3 ; fi
     # Build Android
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then cd ../proj.android ; fi
-    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then fastlane android test ; fi
+    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then gem install bundler ; fi
+    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then bundle install ; fi
+    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then gradle wrapper --graddle-version=5.1.1 ; fi
+    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then bundle exec fastlane android test ; fi
