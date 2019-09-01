@@ -13,12 +13,9 @@ script:
     ############################################################################
     # Build main and tests
     ############################################################################
-
     - echo $TRAVIS_OS_NAME
-
     # MAC Dependancies
-    - if [ "$TRAVIS_OS_NAME" = "osx" ]; brew install graphicsmagick ; fi
-
+    - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install graphicsmagick ; fi
     # COCOS SETUP
     - rm -rf *
     - sudo sed -i "backup" '133,136d' "/Users/travis/.rvm/rubies/ruby-2.4.5/lib/ruby/gems/2.4.0/gems/fastlane-2.127.1/fastlane_core/lib/fastlane_core/project.rb" || true
@@ -33,7 +30,6 @@ script:
     - mv COCOS/* .
     - git checkout .
     - mkdir build && cd build
-
     # Build IOS
     - if [ "$TRAVIS_OS_NAME" = "osx" ]; then cmake .. -DCMAKE_TOOLCHAIN_FILE=../cocos2d/cmake/ios.toolchain.cmake -GXcode -Wno-dev ; fi
     - if [ "$TRAVIS_OS_NAME" = "osx" ]; then cp -r ../proj.ios_mac/fastlane . ; fi
@@ -41,7 +37,6 @@ script:
     - if [ "$TRAVIS_OS_NAME" = "osx" ]; then bundle install ; fi
     - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ssh-keyscan github.com >> ~/.ssh/known_hosts ; fi
     - if [ "$TRAVIS_OS_NAME" = "osx" ]; then bundle exec fastlane beta ; fi
-
     # Build Linux
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then cmake .. ; fi
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then make ; fi
