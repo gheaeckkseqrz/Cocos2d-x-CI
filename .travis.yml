@@ -54,4 +54,4 @@ script:
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then cd ../proj.android ; fi
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then gem install bundler ; fi
     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then bundle install ; fi
-    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then JAVA_HOME="" bundle exec fastlane android test ; fi
+    - if [ "$TRAVIS_OS_NAME" = "linux" ]; then JAVA_HOME="" bundle exec fastlane android beta ; fi
