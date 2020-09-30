@@ -2,8 +2,8 @@ language: cpp
 
 matrix:
   include:
-    - os: osx
-      osx_image: xcode10.1
+    # - os: osx
+    #   osx_image: xcode10.1
     - os: linux
 
 before_install:
